@@ -1,0 +1,12 @@
+body {
+  display: block;
+  margin: 0px;
+  background-color: #141414
+}
+
+.wrapper {
+  display: block;
+  margin-top: 15px;
+  margin-left: 20%;
+  margin-right: 20%;
+}

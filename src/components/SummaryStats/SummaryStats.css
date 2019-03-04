@@ -1,0 +1,55 @@
+label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  margin: 5px;
+  color: #FFFFFF;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+input {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  text-align: right;
+  float: right;
+  clear: both;
+  margin: 5px;
+  height: 17px;
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+button {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: bold;
+  background-color: #D1C73E;
+  height: 50px;
+  width: 200px;
+}
+
+.form-group {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.output {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  margin: 5px;
+  color: #FFFFFF;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.value {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: right;
+  float: right;
+  clear: both;
+  margin: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
