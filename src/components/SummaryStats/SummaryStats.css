@@ -28,8 +28,14 @@ button {
   width: 200px;
 }
 
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  color: #FFFFFF;
+}
+
 .form-group {
-  width: 50%;
+  width: 300px;
   margin: 0 auto;
 }
 
@@ -52,4 +58,13 @@ button {
   margin: 5px;
   display: inline-block;
   vertical-align: middle;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.standard-zscore {
+
 }
