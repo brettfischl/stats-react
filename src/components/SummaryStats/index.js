@@ -30,10 +30,12 @@ export default class SummaryStats extends Component {
     let value = e.target.value;
     let key = e.target.name
     this.setState({[key]: value})
-    console.log(this.state)
   }
 
   validateProportion(trials, successes, compare) {
+    if (isNaN(trials) || isNaN(successes) || isNaN(compare)) {
+      return false
+    }
     if (trials === 0 || (trials < successes) || (trials < compare)) {
       return false
     }
@@ -47,7 +49,6 @@ export default class SummaryStats extends Component {
 
     if (this.validateProportion(parseInt(trials), parseInt(successes), parseInt(compare))) {
       const sampleProportion = computeSampleProportion(trials, successes, compare)
-      console.log(sampleProportion)
       this.setState({
         computed: true,
         sampleProportion,
@@ -94,33 +95,35 @@ export default class SummaryStats extends Component {
               />
               <Output
                 value={ this.state.sampleProportion.StandardDeviation.toFixed(3) }
-                title={'SANDARD DEV:'}
+                title={'STANDARD DEV:'}
               />
               <Output
                 value={ this.state.sampleProportion.Variance.toFixed(3) }
                 title={'VARIANCE:'}
               />
             </div>
-            <div>
+            <div className="zscore-container">
               {this.state.sampleProportion.BaseZScores.map(score => {
                 return(
-                  <div key={ "Z" + score.Z } >
+                  <div className="standard-zscore-item" key={ "Z" + score.Z } >
                     <h3>{ score.Z }</h3>
                     <ZScore
+                      outputLabelClass="standard-zscore-label"
+                      outputValueClass="standard-zscore-value"
                       probability={ score.Probability.toFixed(3) }
                       value={ score.Value.toFixed(3) }
                     />
                   </div>
                 )
               })}
-              <div className="form-group">
-                <h2>COMPARE TO:</h2>
-                <ZScore
-                  probability={ this.state.sampleProportion.CompareZScore.Probability.toFixed(3) }
-                  value={ this.state.sampleProportion.CompareZScore.Value.toFixed(3) }
-                  zscore={ this.state.sampleProportion.CompareZScore.Z.toFixed(3) }
-                />
-              </div>
+            </div>
+            <div className="form-group">
+              <h2>COMPARE TO:</h2>
+              <ZScore
+                probability={ this.state.sampleProportion.CompareZScore.Probability.toFixed(3) }
+                value={ this.state.sampleProportion.CompareZScore.Value.toFixed(3) }
+                zscore={ this.state.sampleProportion.CompareZScore.Z.toFixed(3) }
+              />
             </div>
           </div>:
           null

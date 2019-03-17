@@ -34,6 +34,12 @@ h2 {
   color: #FFFFFF;
 }
 
+h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  color: #FFFFFF;
+}
+
 .form-group {
   width: 300px;
   margin: 0 auto;
@@ -65,6 +71,30 @@ h2 {
   margin: 0 auto;
 }
 
-.standard-zscore {
+.zscore-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
 
+.standard-zscore-item {
+  font-size: 12px;
+  object-fit: cover;
+}
+
+.standard-zscore-label{
+  grid-row-start: 1;
+  font-size: 12px;
+}
+
+.standard-zscore-value {
+  grid-row-start: 1;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #FFFFFF;
+  text-align: right;
+  float: right;
+  clear: both;
+  margin: 5px;
+  display: inline-block;
+  vertical-align: middle;
 }
