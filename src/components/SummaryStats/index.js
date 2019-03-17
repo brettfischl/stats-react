@@ -3,6 +3,8 @@ import Input from './Input'
 import Output from './Output'
 import ZScore from './ZScore'
 
+import './SummaryStats.css'
+
 export default class SummaryStats extends Component {
   constructor(props) {
     super(props)
@@ -20,7 +22,7 @@ export default class SummaryStats extends Component {
   }
 
   componentDidMount() {
-    WebAssembly.instantiateStreaming(fetch("src/main.wasm"), go.importObject).then(async (result) => {
+    WebAssembly.instantiateStreaming(fetch("./main.wasm"), go.importObject).then(async (result) => {
   		go.run(result.instance)
   		this.setState({ isLoading: false })
   	});

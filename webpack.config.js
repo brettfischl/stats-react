@@ -27,7 +27,8 @@ module.exports = {
       },
       {
         test:/\.css$/,
-        use:['style-loader','css-loader']
+        use:['style-loader','css-loader'],
+        sideEffects: true,
       }
     ],
   },
@@ -52,7 +53,7 @@ module.exports = {
       }
     }),
     // Make sure to add these in this order, so the wasm_exec.js gets injected first
-    // yes, it's backwards, I know :/
+    new AddAssetHtmlPlugin({ filepath: require.resolve('./src/components/SummaryStats/main.wasm') }),
     new AddAssetHtmlPlugin({ filepath: require.resolve('./src/init_go.js') }),
     new AddAssetHtmlPlugin({ filepath: require.resolve('./src/wasm_exec.js') })
   ]
